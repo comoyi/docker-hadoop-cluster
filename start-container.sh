@@ -4,7 +4,7 @@ docker_hadoop_version=0.0.1
 
 # Start master
 master_name="hadoop-master"
-docker rm -f ${master_name} > /dev/null
+docker rm -f ${master_name} > /dev/null 2>&1
 echo "start ${master_name}"
 docker run -itd \
     --net=hadoop \
@@ -21,7 +21,7 @@ n=3
 i=1
 while [ "$i" -le "$n" ]; do
     tmp_slave_name="hadoop-slave-$i"
-    docker rm -f ${tmp_slave_name} > /dev/null
+    docker rm -f ${tmp_slave_name} > /dev/null 2>&1
     echo "start ${tmp_slave_name}"
     docker run -itd \
         --net=hadoop \

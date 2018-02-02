@@ -4,6 +4,8 @@ LABEL maintainer="Michael Chi <chicong@outlook.com>"
 
 WORKDIR /root
 
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
 RUN yum install -y wget openssh openssh-clients openssh-server java-1.8.0-openjdk-devel
 
 RUN ssh-keygen -A
@@ -21,12 +23,14 @@ RUN mkdir -p ~/hadoop/hdfs/namenode \
 #    && tar -C /opt -zxvf hadoop-3.0.0.tar.gz \
 #    && rm -f hadoop-3.0.0.tar.gz
 
-COPY hadoop-3.0.0.tar.gz /root
+COPY hadoop-3.0.0.tar.gz $HOME
 
 RUN tar -C /opt -zxvf hadoop-3.0.0.tar.gz \
     && rm -f hadoop-3.0.0.tar.gz
 
 ENV HADOOP_HOME=/opt/hadoop-3.0.0
+
+ENV PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 
 ENV HDFS_NAMENODE_USER=root
 
@@ -51,6 +55,8 @@ COPY config/hadoop-env.sh ${HADOOP_HOME}/etc/hadoop
 COPY config/workers ${HADOOP_HOME}/etc/hadoop
 
 COPY start-all.sh ${HOME}
+
+COPY word-count.sh ${HOME}
 
 RUN mkdir -p ${HADOOP_HOME}/logs
 
