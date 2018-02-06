@@ -14,7 +14,6 @@ docker run -itd \
     --hostname "${master_name}" \
     comoyi/hadoop:${docker_hadoop_version} \
     > /dev/null
-echo ""
 
 # Start slaves
 n=3
@@ -30,8 +29,8 @@ while [ "$i" -le "$n" ]; do
         comoyi/hadoop:${docker_hadoop_version} \
         > /dev/null
     i=$(($i + 1))
-    echo ""
 done
+echo ""
 
 # Show hadoop containers
 docker ps | head -1
