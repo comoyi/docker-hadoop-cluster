@@ -23,7 +23,7 @@ cd docker-hadoop-cluster
 ### Start docker container
 
 ```bash
-./start-container.sh
+./run-container.sh
 ```
 
 ### Get into container
