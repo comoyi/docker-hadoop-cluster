@@ -2,6 +2,18 @@
 
 ## Step by step
 
+### Get repository
+
+```bash
+git clone https://github.com/comoyi/docker-hadoop-cluster.git
+```
+
+### Enter the directory
+
+```bash
+cd docker-hadoop-cluster
+```
+
 ### Build docker image
 
 ```bash
