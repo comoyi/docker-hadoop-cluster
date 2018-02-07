@@ -15,6 +15,7 @@ docker run -itd \
     --net=${hadoop_network} \
     -p 8088:8088 \
     -p 9870:9870 \
+    -p 19888:19888 \
     --name "${master_name}" \
     --hostname "${master_name}" \
     comoyi/hadoop:${image_version} \

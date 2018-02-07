@@ -50,6 +50,8 @@ cluster [http://127.0.0.1:8088](http://127.0.0.1:8088)
 
 dfs [http://127.0.0.1:9870](http://127.0.0.1:9870)
 
+job [http://127.0.0.1:19888](http://127.0.0.1:19888)
+
 ## Other
 
 ### Start docker container
