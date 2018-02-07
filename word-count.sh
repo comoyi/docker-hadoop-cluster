@@ -2,6 +2,7 @@
 
 hadoop fs -rm -r -f output/word-count
 
+rm -rf word-count
 mkdir -p word-count
 
 echo "Hello World" > word-count/file1.txt
