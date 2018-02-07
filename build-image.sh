@@ -1,7 +1,7 @@
 #!/bin/bash
 
 hadoop_version=3.0.0
-docker_hadoop_version=0.0.1
+image_version=0.0.1
 
 # Download
 if [[ ! -f "hadoop-${hadoop_version}.tar.gz" ]]; then
@@ -19,4 +19,4 @@ fi
 
 # Build image
 echo "Start build image"
-docker build -t comoyi/hadoop:${docker_hadoop_version} .
+docker build -t comoyi/hadoop:${image_version} .
