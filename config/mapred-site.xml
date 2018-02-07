@@ -33,4 +33,20 @@
         <name>mapreduce.reduce.env</name>
         <value>HADOOP_MAPRED_HOME=/opt/hadoop-3.0.0</value>
     </property>
+    <property>
+        <name>mapreduce.map.memory.mb</name>
+        <value>1024</value>
+    </property>
+    <property>
+        <name>mapreduce.reduce.memory.mb</name>
+        <value>1024</value>
+    </property>
+    <property>
+        <name>mapreduce.task.io.sort.mb</name>
+        <value>512</value>
+    </property>
+    <property>
+        <name>mapreduce.task.io.sort.factor</name>
+        <value>100</value>
+    </property>
 </configuration>
