@@ -42,4 +42,4 @@ docker ps | head -1
 docker ps | grep hadoop
 
 echo ""
-echo "you can access hadoop-master by command: docker exec -it hadoop-master bash"
+echo "you can access ${master_name} by command: docker exec -it ${master_name} bash"

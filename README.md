@@ -20,7 +20,7 @@ cd docker-hadoop-cluster
 ./build-image.sh
 ```
 
-### Start docker container
+### Run docker container
 
 ```bash
 ./run-container.sh
@@ -49,3 +49,17 @@ docker exec -it hadoop-master bash
 cluster [http://127.0.0.1:8088](http://127.0.0.1:8088)
 
 dfs [http://127.0.0.1:9870](http://127.0.0.1:9870)
+
+## Other
+
+### Start docker container
+
+```bash
+./start-container.sh
+```
+
+### Stop docker container
+
+```bash
+./stop-container.sh
+```

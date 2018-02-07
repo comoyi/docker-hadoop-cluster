@@ -1,7 +1,7 @@
 #!/bin/bash
 
 hadoop_version=3.0.0
-docker_hadoop_version=0.0.1
+image_version=0.0.1
 
 # Download
 if [[ ! -f "hadoop-${hadoop_version}.tar.gz" ]]; then
@@ -14,9 +14,9 @@ fi
 sha256sum -c hadoop.sha256sum > /dev/null 2>&1
 if [[ $? -ne 0 ]]; then
     echo "Check sha256sum error, please delete hadoop-${hadoop_version}.tar.gz and rerun this script."
-    exit
+    exit 1
 fi
 
 # Build image
 echo "Start build image"
-docker build -t comoyi/hadoop:${docker_hadoop_version} .
+docker build -t comoyi/hadoop:${image_version} .
