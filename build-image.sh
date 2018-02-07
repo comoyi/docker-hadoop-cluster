@@ -14,7 +14,7 @@ fi
 sha256sum -c hadoop.sha256sum > /dev/null 2>&1
 if [[ $? -ne 0 ]]; then
     echo "Check sha256sum error, please delete hadoop-${hadoop_version}.tar.gz and rerun this script."
-    exit
+    exit 1
 fi
 
 # Build image
