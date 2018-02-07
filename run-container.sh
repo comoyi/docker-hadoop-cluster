@@ -1,7 +1,7 @@
 #!/bin/bash
 
 image_version=0.0.1
-hadoop_network=hadoop
+hadoop_network=hadoop-cluster
 
 # Create network
 echo "create network: ${hadoop_network}"
