@@ -4,13 +4,19 @@ image_version=0.0.1
 hadoop_network=hadoop-cluster
 
 # Create network
-echo "create network: ${hadoop_network}"
-docker network create ${hadoop_network}
+echo "Create network: ${hadoop_network}"
+if [[ $(docker network ls --filter name=^${hadoop_network}$ | wc -l) -gt 1 ]]; then
+    printf "\033[33mNetwork ${hadoop_network} already exist, skip.\033[0m\n"
+else
+    docker network create ${hadoop_network}
+fi
+docker network ls --filter name=^${hadoop_network}$ --no-trunc
+echo ""
 
-# Start master
+# Run master
 master_name="hadoop-master"
 docker rm -f ${master_name} > /dev/null 2>&1
-echo "start ${master_name}"
+echo "Run ${master_name}"
 docker run -itd \
     --net=${hadoop_network} \
     -p 8088:8088 \
@@ -21,13 +27,13 @@ docker run -itd \
     comoyi/hadoop:${image_version} \
     > /dev/null
 
-# Start slaves
+# Run slaves
 n=3
 i=1
 while [ "$i" -le "$n" ]; do
     tmp_slave_name="hadoop-slave-$i"
     docker rm -f ${tmp_slave_name} > /dev/null 2>&1
-    echo "start ${tmp_slave_name}"
+    echo "Run ${tmp_slave_name}"
     docker run -itd \
         --net=${hadoop_network} \
         --name "${tmp_slave_name}" \
