@@ -14,5 +14,5 @@ if [[ $? -eq 0 ]]; then
     exit 0
 fi
 
-printf "\033[31mNo browser found!\033[0m\n"
+printf "\033[31mNo browser found, please open it manually.\033[0m\n"
 exit 1
