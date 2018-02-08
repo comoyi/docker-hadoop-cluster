@@ -44,7 +44,7 @@ docker exec -it hadoop-master bash
 ./word-count.sh
 ```
 
-### Open browser
+### Open the browser on the host (not in docker)
 
 ```bash
 ./open-browser.sh
