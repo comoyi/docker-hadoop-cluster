@@ -46,6 +46,10 @@ docker exec -it hadoop-master bash
 
 ### Open browser
 
+```bash
+./open-browser.sh
+```
+
 cluster [http://127.0.0.1:8088](http://127.0.0.1:8088)
 
 dfs [http://127.0.0.1:9870](http://127.0.0.1:9870)
