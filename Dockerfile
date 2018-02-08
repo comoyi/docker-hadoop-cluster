@@ -54,9 +54,9 @@ COPY config/hadoop-env.sh ${HADOOP_HOME}/etc/hadoop
 
 COPY config/workers ${HADOOP_HOME}/etc/hadoop
 
-COPY start-all.sh ${HOME}
+COPY data/start-all.sh ${HOME}
 
-COPY word-count.sh ${HOME}
+COPY data/word-count.sh ${HOME}
 
 RUN mkdir -p ${HADOOP_HOME}/logs
 

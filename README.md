@@ -32,6 +32,12 @@ cd docker-hadoop-cluster
 docker exec -it hadoop-master bash
 ```
 
+or
+
+```bash
+./init-tmux-session.sh
+```
+
 ### Start hadoop
 
 ```bash

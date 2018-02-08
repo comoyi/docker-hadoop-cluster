@@ -48,4 +48,4 @@ echo ""
 docker ps | head -1
 docker ps | grep hadoop
 
-printf "\n\033[32m[OK]\033[0m You can access ${master_name} by command: \033[34mdocker exec -it ${master_name} bash\033[0m\n"
+printf "\n\033[32m[OK]\033[0m You can access container by command: \033[34mdocker exec -it ${master_name} bash\033[0m or \033[34m./init-tmux-session.sh\033[0m\n"
